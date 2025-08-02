@@ -147,10 +147,13 @@ const BlogSection = () => {
                       <div className="bg-white border border-gray-100 rounded-lg overflow-hidden h-full flex flex-col transition-all duration-300 hover:border-blue-100">
                         <div className="relative overflow-hidden aspect-[4/3]">
                           <Link to={`/blog-details/${blog.blogs_slug}`}>
-                            <img
+                            <LazyLoadImage
                               src={`${BLOG_IMAGE_URL}/${blog.blogs_image}`}
                               className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                               alt={blog.blogs_heading}
+                              effect="blur"
+                              width="300"
+                              height="225"
                             />
                           </Link>
                         </div>
@@ -158,10 +161,13 @@ const BlogSection = () => {
                           <div className="flex justify-between items-center mb-3">
                             <div className="flex items-center">
                               <div className="rounded-full overflow-hidden mr-2 border border-gray-200">
-                                <img
+                                <LazyLoadImage
                                   src="assets/img/services/v3logo.png"
                                   className="w-8 h-8 object-cover"
                                   alt="user"
+                                  effect="blur"
+                                  width="32"
+                                  height="32"
                                 />
                               </div>
                               <span className="text-sm text-gray-600">V3 Care</span>

@@ -7,23 +7,7 @@ import SmoothScroll from './components/SmoothScroll/SmoothScroll';
 import CityModal from './components/CityModal/CityModal';
 import LoadingBar from './components/loadingBar/LoadingBar';
 
-
-// import Home from './pages/home/Home'
-// import Client from './pages/client/Client';
-// import Blog from './pages/blog/Blog';
-// import BlogDetails from './pages/blog/BlogDetails';
-// import ApplyJob from './pages/apply-job/ApplyJob';
-// import ContactUs from './pages/contact-us/ContactUs';
-// import ServiceList from './pages/service/ServiceList';
-// import CategoriesList from './pages/categories/CategoriesList';
-// import BecomeVendor from './pages/became-vendor/BecomeVendor';
-// import ServiceDetails from './pages/service-details/ServiceDetails';
-// import Cart from './pages/cart/Cart';
-// import AboutUs from './pages/about-us/AboutUs';
-// import PaymentSuccess from './pages/payment/PaymentSuccess';
-// import PaymentFailed from './pages/payment/PaymentFailed';
-
-
+// Lazy load components for better performance
 const Home = lazy(() => import('./pages/home/Home'));
 const Client = lazy(() => import('./pages/client/Client'));
 const Blog = lazy(() => import('./pages/blog/Blog'));
@@ -38,7 +22,6 @@ const Cart = lazy(() => import('./pages/cart/Cart'));
 const AboutUs = lazy(() => import('./pages/about-us/AboutUs'));
 const PaymentSuccess = lazy(() => import('./pages/payment/PaymentSuccess'));
 const PaymentFailed = lazy(() => import('./pages/payment/PaymentFailed'));
-
 
 function App() {
     const [showCityModal, setShowCityModal] = useState(false);
@@ -58,7 +41,6 @@ function App() {
       setCurrentCity(city);
       setShowCityModal(false);
     
-     
       window.dispatchEvent(new CustomEvent('cityChanged', { detail: city }));
     };
     
@@ -106,12 +88,6 @@ function App() {
         <Route path="/payment-success" element={<PaymentSuccess />} />
         <Route path="/booking-failed" element={<PaymentFailed />} />
 
-
-       
-      
-        
-  
-     
       </Routes>
       </Suspense>
     </MainLayout>

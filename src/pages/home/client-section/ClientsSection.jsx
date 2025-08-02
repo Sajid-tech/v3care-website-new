@@ -127,11 +127,13 @@ const ClientsSection = () => {
                 {clients.map((client, index) => (
                   <SwiperSlide key={index}>
                     <div className="flex items-center justify-center h-32 p-2 transition-all duration-300 hover:-translate-y-1">
-                      <img
+                      <LazyLoadImage
                         src={getClientImageUrl(client.client_image)}
                         alt={client.client_name}
                         className="max-h-20 w-auto object-contain  hover:border hover:border-black/20 transition-all duration-300 hover:scale-105"
-                        loading="lazy"
+                        effect="blur"
+                        width="80"
+                        height="80"
                       />
                     </div>
                   </SwiperSlide>

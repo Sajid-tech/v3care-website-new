@@ -99,10 +99,13 @@ const TestimonialsSection = () => {
                   <SwiperSlide key={index}>
                     <div className="bg-white rounded-xl p-6 border border-blue-100">
                       <div className="flex items-start gap-4 mb-4">
-                        <img
+                        <LazyLoadImage
                           src={getTestimonialImageUrl(testimonial.testimonial_image)}
                           alt={testimonial.testimonial_user}
                           className="w-14 h-14 rounded-full object-cover border-2 border-red-100"
+                          effect="blur"
+                          width="56"
+                          height="56"
                         />
                         <div>
                           <h4 className="text-lg font-semibold text-gray-800">
